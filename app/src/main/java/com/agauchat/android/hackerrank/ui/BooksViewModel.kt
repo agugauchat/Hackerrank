@@ -20,7 +20,7 @@ class BooksViewModel @Inject constructor(private val mainRepository: MainReposit
 
     val bestSellerBooks: LiveData<List<BookItem>> = liveData {
         val bestSellers = mainRepository.getBestSellers().bestSellers.isbnList
-        //val books = mainRepository.getBooks().booksResults.books
-        emit(books.value().books.filter { book -> book.isbn in bestSellers })
+        val books = mainRepository.getBooks().booksResults.books
+        emit(books.filter { book -> book.isbn in bestSellers })
     }
 }

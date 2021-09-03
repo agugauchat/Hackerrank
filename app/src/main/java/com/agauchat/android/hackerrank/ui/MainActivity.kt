@@ -1,6 +1,7 @@
 package com.agauchat.android.hackerrank.ui
 
 import android.os.Bundle
+import android.view.View
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -34,9 +35,14 @@ class MainActivity : AppCompatActivity() {
         val bestSellersBooksAdapter = BooksAdapter()
 
         viewModel.bestSellerBooks.observe(this) {
-            bestSellersBooksAdapter.setBookList(it)
-            binding.bestSellersRecyclerView.setHasFixedSize(true)
-            binding.bestSellersRecyclerView.adapter = bestSellersBooksAdapter
+            if (it.isEmpty()) {
+                binding.bestSellersTitle.visibility = View.GONE
+                binding.bestSellersRecyclerView.visibility = View.GONE
+            } else {
+                bestSellersBooksAdapter.setBookList(it)
+                binding.bestSellersRecyclerView.setHasFixedSize(true)
+                binding.bestSellersRecyclerView.adapter = bestSellersBooksAdapter
+            }
         }
     }
 }
