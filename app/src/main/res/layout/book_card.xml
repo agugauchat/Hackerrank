@@ -5,8 +5,8 @@
     android:id="@+id/book_card"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginHorizontal="16dp"
-    android:layout_marginVertical="8dp"
+    android:layout_marginHorizontal="@dimen/margin_large"
+    android:layout_marginVertical="@dimen/margin_small"
     app:cardCornerRadius="10dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -30,8 +30,8 @@
             style="@style/book_title"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:paddingHorizontal="12dp"
-            android:paddingTop="12dp"
+            android:paddingHorizontal="@dimen/margin_medium"
+            android:paddingTop="@dimen/margin_medium"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/book_image"
             app:layout_constraintTop_toTopOf="parent"
@@ -42,7 +42,7 @@
             style="@style/book_author"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:paddingHorizontal="12dp"
+            android:paddingHorizontal="@dimen/margin_medium"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/book_image"
             app:layout_constraintTop_toBottomOf="@id/book_title"

@@ -44,23 +44,31 @@ class MainActivity : AppCompatActivity() {
                     binding.bestSellersTitle.visibility = View.GONE
                     binding.bestSellersRecyclerView.visibility = View.GONE
                 } else {
+                    binding.bestSellersTitle.visibility = View.VISIBLE
+                    binding.bestSellersRecyclerView.visibility = View.VISIBLE
                     bestSellersRecyclerViewAdapter.items = result.value
                 }
+            } else {
+                binding.bestSellersTitle.visibility = View.GONE
+                binding.bestSellersRecyclerView.visibility = View.GONE
             }
         }
     }
 }
 
+// ToDo -> Función para cambiar la visibility
 // Done -> Sacar recyclerView del nombre
 // Done -> Ocultar los títulos si vienen vacías
 // Done -> Refactorizar lo que vea repetido
 // Fail -> Ver si puedo eliminar el bookResult: No pude
 // Done -> Acomodar UI
-// ToDo -> Probar rotando la pantalla
+// Done -> Probar rotando la pantalla y sin conexión
+// Done -> Ordenar los xml
+// ToDO -> Mover el nombre de las categorías a un enum
 // ToDo -> Agregar readme: aclarando los nice to have
     //Nice to have:
     //Cache img -> Done con glide: https://futurestud.io/tutorials/glide-caching-basics
     //Horizontal scroll de best sellers -> Done
 // ToDo -> Correr los análisis de código
-// ToDo -> Formatear el código y ordenar los xml
+// ToDo -> Formatear el código y ordenar los xml: TERMINAR
 // ToDo -> Mover las dimensiones a dimen y también los textos
