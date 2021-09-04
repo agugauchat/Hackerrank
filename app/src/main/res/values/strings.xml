@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Hackerrank</string>
     <string name="best_sellers_title">Best sellers</string>
+    <string name="book_image">Cover</string>
 </resources>
