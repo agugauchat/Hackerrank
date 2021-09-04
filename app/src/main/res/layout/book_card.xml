@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/book_card"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/book_card"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginVertical="8dp"
     android:layout_marginHorizontal="16dp"
+    android:layout_marginVertical="8dp"
     app:cardCornerRadius="10dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -19,32 +19,32 @@
             android:id="@+id/book_image"
             android:layout_width="140dp"
             android:layout_height="190dp"
-            app:layout_constraintStart_toStartOf="parent"
-            android:scaleType="fitXY"
             android:adjustViewBounds="true"
+            android:contentDescription="@string/book_image"
+            android:scaleType="fitXY"
             app:layout_constraintBottom_toBottomOf="parent"
-            android:contentDescription="@string/book_image" />
+            app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
             android:id="@+id/book_title"
+            style="@style/book_title"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:paddingHorizontal="12dp"
             android:paddingTop="12dp"
-            style="@style/book_title"
-            app:layout_constraintStart_toEndOf="@id/book_image"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/book_image"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="Desde que llego se volvio loca, ella le da hasta abajo como ninguna" />
 
         <TextView
             android:id="@+id/book_author"
+            style="@style/book_author"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            style="@style/book_author"
             android:paddingHorizontal="12dp"
-            app:layout_constraintStart_toEndOf="@id/book_image"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/book_image"
             app:layout_constraintTop_toBottomOf="@id/book_title"
             tools:text="Author" />
 
