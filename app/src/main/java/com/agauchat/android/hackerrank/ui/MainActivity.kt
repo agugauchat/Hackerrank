@@ -53,6 +53,9 @@ class MainActivity : AppCompatActivity() {
 
 // Done -> Sacar recyclerView del nombre
 // Done -> Ocultar los títulos si vienen vacías
+// Done -> Refactorizar lo que vea repetido
+// Fail -> Ver si puedo eliminar el bookResult: No pude
+// Done -> Acomodar UI
 // ToDo -> Probar rotando la pantalla
 // ToDo -> Agregar readme: aclarando los nice to have
     //Nice to have:
@@ -61,5 +64,3 @@ class MainActivity : AppCompatActivity() {
 // ToDo -> Correr los análisis de código
 // ToDo -> Formatear el código y ordenar los xml
 // ToDo -> Mover las dimensiones a dimen y también los textos
-// ToDo -> Ver si puedo eliminar el bookResult
-// ToDo -> Refactorizar lo que vea repetido

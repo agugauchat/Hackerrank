@@ -5,46 +5,46 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="8dp"
+    android:layout_marginVertical="8dp"
+    android:layout_marginHorizontal="16dp"
     app:cardCornerRadius="10dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/white">
+        android:background="@color/white"
+        tools:ignore="RtlSymmetry">
 
         <ImageView
             android:id="@+id/book_image"
             android:layout_width="140dp"
-            android:layout_height="wrap_content"
+            android:layout_height="190dp"
             app:layout_constraintStart_toStartOf="parent"
-            android:scaleType="fitCenter"
+            android:scaleType="fitXY"
             android:adjustViewBounds="true"
             app:layout_constraintBottom_toBottomOf="parent"
             android:contentDescription="@string/book_image" />
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guidelineImage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.4" />
-
         <TextView
             android:id="@+id/book_title"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            app:layout_constraintStart_toStartOf="@id/guidelineImage"
+            android:paddingHorizontal="12dp"
+            android:paddingTop="12dp"
+            style="@style/book_title"
+            app:layout_constraintStart_toEndOf="@id/book_image"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="Title" />
+            tools:text="Desde que llego se volvio loca, ella le da hasta abajo como ninguna" />
 
         <TextView
             android:id="@+id/book_author"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            app:layout_constraintStart_toStartOf="@id/guidelineImage"
+            style="@style/book_author"
+            android:paddingHorizontal="12dp"
+            app:layout_constraintStart_toEndOf="@id/book_image"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/book_title"
             tools:text="Author" />
 
