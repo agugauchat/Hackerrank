@@ -8,7 +8,7 @@ import com.agauchat.android.hackerrank.databinding.BookCardBinding
 import com.agauchat.android.hackerrank.databinding.SectionTitleBinding
 import java.lang.IllegalArgumentException
 
-class BookRecyclerViewAdapter : RecyclerView.Adapter<BookRecyclerViewHolder>() {
+class BooksAdapter : RecyclerView.Adapter<BooksHolder>() {
 
     var items = listOf<BookRecyclerViewItem>()
         set(value) {
@@ -16,16 +16,16 @@ class BookRecyclerViewAdapter : RecyclerView.Adapter<BookRecyclerViewHolder>() {
             notifyDataSetChanged()
         }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BookRecyclerViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BooksHolder {
         return when (viewType) {
-            R.layout.section_title -> BookRecyclerViewHolder.SectionTitleViewHolder(
+            R.layout.section_title -> BooksHolder.SectionTitleViewHolder(
                 SectionTitleBinding.inflate(
                     LayoutInflater.from(parent.context),
                     parent,
                     false
                 )
             )
-            R.layout.book_card -> BookRecyclerViewHolder.BookCardViewHolder(
+            R.layout.book_card -> BooksHolder.BookCardViewHolder(
                 BookCardBinding.inflate(
                     LayoutInflater.from(parent.context),
                     parent,
@@ -36,10 +36,10 @@ class BookRecyclerViewAdapter : RecyclerView.Adapter<BookRecyclerViewHolder>() {
         }
     }
 
-    override fun onBindViewHolder(holder: BookRecyclerViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: BooksHolder, position: Int) {
         when (holder) {
-            is BookRecyclerViewHolder.SectionTitleViewHolder -> holder.bind(items[position] as BookRecyclerViewItem.SectionTitle)
-            is BookRecyclerViewHolder.BookCardViewHolder -> holder.bind(items[position] as BookRecyclerViewItem.BookCard)
+            is BooksHolder.SectionTitleViewHolder -> holder.bind(items[position] as BookRecyclerViewItem.SectionTitle)
+            is BooksHolder.BookCardViewHolder -> holder.bind(items[position] as BookRecyclerViewItem.BookCard)
         }
     }
 
