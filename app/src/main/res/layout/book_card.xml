@@ -7,7 +7,7 @@
     android:layout_height="wrap_content"
     android:layout_marginHorizontal="@dimen/margin_large"
     android:layout_marginVertical="@dimen/margin_small"
-    app:cardCornerRadius="10dp">
+    app:cardCornerRadius="@dimen/card_radio">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -17,8 +17,8 @@
 
         <ImageView
             android:id="@+id/book_image"
-            android:layout_width="140dp"
-            android:layout_height="190dp"
+            android:layout_width="@dimen/img_width"
+            android:layout_height="@dimen/img_height"
             android:adjustViewBounds="true"
             android:contentDescription="@string/book_image"
             android:scaleType="fitXY"
@@ -35,7 +35,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/book_image"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="Desde que llego se volvio loca, ella le da hasta abajo como ninguna" />
+            tools:text="@string/title_placeholder" />
 
         <TextView
             android:id="@+id/book_author"
@@ -46,7 +46,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/book_image"
             app:layout_constraintTop_toBottomOf="@id/book_title"
-            tools:text="Author" />
+            tools:text="@string/author_placeholder" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

@@ -11,7 +11,7 @@
     <ImageView
         android:id="@+id/separator"
         android:layout_width="match_parent"
-        android:layout_height="1dp"
+        android:layout_height="@dimen/separator_height"
         android:importantForAccessibility="no"
         android:src="@color/gray_450_solid"
         app:layout_constraintTop_toTopOf="parent" />
@@ -24,6 +24,6 @@
         android:layout_marginTop="@dimen/margin_medium"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/separator"
-        tools:text="Section title" />
+        tools:text="@string/title_placeholder" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

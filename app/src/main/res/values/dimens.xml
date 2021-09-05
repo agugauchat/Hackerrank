@@ -8,5 +8,9 @@
     <dimen name="margin_small">8dp</dimen>
     <dimen name="margin_medium">12dp</dimen>
     <dimen name="margin_large">16dp</dimen>
+    <dimen name="card_radio">10dp</dimen>
+    <dimen name="img_width">140dp</dimen>
+    <dimen name="img_height">190dp</dimen>
+    <dimen name="separator_height">1dp</dimen>
 
 </resources>

@@ -2,4 +2,6 @@
     <string name="app_name">Hackerrank</string>
     <string name="best_sellers_title">Best sellers</string>
     <string name="book_image">Book cover</string>
+    <string name="title_placeholder">Title</string>
+    <string name="author_placeholder">Author</string>
 </resources>
