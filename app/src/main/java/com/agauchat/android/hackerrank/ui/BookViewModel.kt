@@ -20,7 +20,8 @@ class BookViewModel @Inject constructor(private val repository: Repository) : Vi
     val bookListItemsLiveData: LiveData<Resource<List<BookRecyclerViewItem>>>
         get() = _bookListItemsLiveData
 
-    private val _bestSellersListItemsLiveData = MutableLiveData<Resource<List<BookRecyclerViewItem>>>()
+    private val _bestSellersListItemsLiveData =
+        MutableLiveData<Resource<List<BookRecyclerViewItem>>>()
     val bestSellersListItemsLiveData: LiveData<Resource<List<BookRecyclerViewItem>>>
         get() = _bestSellersListItemsLiveData
 
@@ -49,7 +50,12 @@ class BookViewModel @Inject constructor(private val repository: Repository) : Vi
             _bookListItemsLiveData.postValue(Resource.Success(bookItemsList))
 
             if (bestSellers is Resource.Success) {
-                bestSellersItemsList.addAll(getBestSellersItems(bookList, bestSellers.value.bestSellers.isbnList))
+                bestSellersItemsList.addAll(
+                    getBestSellersItems(
+                        bookList,
+                        bestSellers.value.bestSellers.isbnList
+                    )
+                )
                 _bestSellersListItemsLiveData.postValue(Resource.Success(bestSellersItemsList))
             }
         } else {
@@ -57,7 +63,10 @@ class BookViewModel @Inject constructor(private val repository: Repository) : Vi
         }
     }
 
-    private fun getBestSellersItems(bookList: List<BookItem>, bestSellers: List<String>): MutableList<BookRecyclerViewItem> {
+    private fun getBestSellersItems(
+        bookList: List<BookItem>,
+        bestSellers: List<String>
+    ): MutableList<BookRecyclerViewItem> {
         val auxList = bookList.filter { book -> book.isbn in bestSellers }
         val items = mutableListOf<BookRecyclerViewItem>()
         auxList.forEach {
@@ -67,7 +76,10 @@ class BookViewModel @Inject constructor(private val repository: Repository) : Vi
         return items
     }
 
-    private fun getSectionItems(genre: Genre, bookList : List<BookItem>): MutableList<BookRecyclerViewItem> {
+    private fun getSectionItems(
+        genre: Genre,
+        bookList: List<BookItem>
+    ): MutableList<BookRecyclerViewItem> {
         val auxList = bookList.filter { book -> book.genre == genre.title }
         val items = mutableListOf<BookRecyclerViewItem>()
         if (!auxList.isNullOrEmpty()) {

@@ -1,6 +1,5 @@
 package com.agauchat.android.hackerrank.ui
 
-import android.opengl.Visibility
 import android.os.Bundle
 import android.view.View
 import androidx.activity.viewModels
@@ -8,7 +7,6 @@ import androidx.appcompat.app.AppCompatActivity
 import com.agauchat.android.hackerrank.data.api.Resource
 import com.agauchat.android.hackerrank.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
-
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
@@ -69,9 +67,9 @@ class MainActivity : AppCompatActivity() {
 // Done -> Ordenar los xml
 // Done -> Mover el nombre de las categorías a un enum
 // ToDo -> Agregar readme: aclarando los nice to have
-    //Nice to have:
-    //Cache img -> Done con glide: https://futurestud.io/tutorials/glide-caching-basics
-    //Horizontal scroll de best sellers -> Done
+//Nice to have:
+//Cache img -> Done con glide: https://futurestud.io/tutorials/glide-caching-basics
+//Horizontal scroll de best sellers -> Done
 // ToDo -> Correr los análisis de código
 // ToDo -> Formatear el código
 // Done -> Mover las dimensiones a dimen y los textos

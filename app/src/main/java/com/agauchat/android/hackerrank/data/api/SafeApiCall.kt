@@ -1,7 +1,5 @@
 package com.agauchat.android.hackerrank.data.api
 
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.withContext
 import retrofit2.HttpException
 
 interface SafeApiCall {
