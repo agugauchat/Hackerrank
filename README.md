@@ -3,11 +3,4 @@
 
 Android app with MVVM architecture, Dagger HILT for DI, Retrofit for networking and Glide for image handle.
 
-Optionals:
-- [x] Best sellers section scroll horizontally
-- [x] [Cache book cover images](https://futurestud.io/tutorials/glide-caching-basics) to improve performance
-
-Pending:
-- Tests (for time reasons)
-
 *Author:* Augusto Gauchat (agu.gauchat@gmail.com)
