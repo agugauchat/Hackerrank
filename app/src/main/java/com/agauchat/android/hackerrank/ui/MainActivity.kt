@@ -1,5 +1,6 @@
 package com.agauchat.android.hackerrank.ui
 
+import android.opengl.Visibility
 import android.os.Bundle
 import android.view.View
 import androidx.activity.viewModels
@@ -41,22 +42,24 @@ class MainActivity : AppCompatActivity() {
         viewModel.bestSellersListItemsLiveData.observe(this) { result ->
             if (result is Resource.Success) {
                 if (result.value.isNullOrEmpty()) {
-                    binding.bestSellersTitle.visibility = View.GONE
-                    binding.bestSellersRecyclerView.visibility = View.GONE
+                    changeBestSellersVisibility(binding, View.GONE)
                 } else {
-                    binding.bestSellersTitle.visibility = View.VISIBLE
-                    binding.bestSellersRecyclerView.visibility = View.VISIBLE
+                    changeBestSellersVisibility(binding, View.VISIBLE)
                     bestSellersRecyclerViewAdapter.items = result.value
                 }
             } else {
-                binding.bestSellersTitle.visibility = View.GONE
-                binding.bestSellersRecyclerView.visibility = View.GONE
+                changeBestSellersVisibility(binding, View.GONE)
             }
         }
     }
+
+    private fun changeBestSellersVisibility(binding: ActivityMainBinding, visibilityState: Int) {
+        binding.bestSellersTitle.visibility = visibilityState
+        binding.bestSellersRecyclerView.visibility = visibilityState
+    }
 }
 
-// ToDo -> Función para cambiar la visibility
+// Done -> Función para cambiar la visibility
 // Done -> Sacar recyclerView del nombre
 // Done -> Ocultar los títulos si vienen vacías
 // Done -> Refactorizar lo que vea repetido
@@ -64,11 +67,11 @@ class MainActivity : AppCompatActivity() {
 // Done -> Acomodar UI
 // Done -> Probar rotando la pantalla y sin conexión
 // Done -> Ordenar los xml
-// ToDO -> Mover el nombre de las categorías a un enum
+// Done -> Mover el nombre de las categorías a un enum
 // ToDo -> Agregar readme: aclarando los nice to have
     //Nice to have:
     //Cache img -> Done con glide: https://futurestud.io/tutorials/glide-caching-basics
     //Horizontal scroll de best sellers -> Done
 // ToDo -> Correr los análisis de código
-// ToDo -> Formatear el código y ordenar los xml: TERMINAR
-// ToDo -> Mover las dimensiones a dimen y también los textos
+// ToDo -> Formatear el código
+// Done -> Mover las dimensiones a dimen y los textos

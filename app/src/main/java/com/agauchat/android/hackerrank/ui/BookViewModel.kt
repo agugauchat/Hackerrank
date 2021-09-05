@@ -7,6 +7,7 @@ import androidx.lifecycle.viewModelScope
 import com.agauchat.android.hackerrank.data.api.Resource
 import com.agauchat.android.hackerrank.data.model.BookItem
 import com.agauchat.android.hackerrank.data.repository.Repository
+import com.agauchat.android.hackerrank.ui.utils.Genre
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
@@ -41,9 +42,9 @@ class BookViewModel @Inject constructor(private val repository: Repository) : Vi
 
         if (books is Resource.Success) {
             val bookList = books.value.booksResults.books
-            bookItemsList.addAll(getSectionItems("History", bookList))
-            bookItemsList.addAll(getSectionItems("Science", bookList))
-            bookItemsList.addAll(getSectionItems("Business", bookList))
+            bookItemsList.addAll(getSectionItems(Genre.HISTORY, bookList))
+            bookItemsList.addAll(getSectionItems(Genre.SCIENCE, bookList))
+            bookItemsList.addAll(getSectionItems(Genre.BUSINESS, bookList))
 
             _bookListItemsLiveData.postValue(Resource.Success(bookItemsList))
 
@@ -66,11 +67,11 @@ class BookViewModel @Inject constructor(private val repository: Repository) : Vi
         return items
     }
 
-    private fun getSectionItems(sectionName: String, bookList : List<BookItem>): MutableList<BookRecyclerViewItem> {
-        val auxList = bookList.filter { book -> book.genre == sectionName }
+    private fun getSectionItems(genre: Genre, bookList : List<BookItem>): MutableList<BookRecyclerViewItem> {
+        val auxList = bookList.filter { book -> book.genre == genre.title }
         val items = mutableListOf<BookRecyclerViewItem>()
         if (!auxList.isNullOrEmpty()) {
-            items.add(BookRecyclerViewItem.SectionTitle(sectionName))
+            items.add(BookRecyclerViewItem.SectionTitle(genre.title))
             auxList.forEach {
                 items.add(BookRecyclerViewItem.BookCard(it.title, it.author, it.img))
             }
