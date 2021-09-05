@@ -19,11 +19,20 @@
     <TextView
         android:id="@+id/section_title_name"
         style="@style/section_title"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_medium"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/separator"
         tools:text="@string/title_placeholder" />
+
+    <TextView
+        android:id="@+id/section_detail"
+        style="@style/section_detail"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="@string/books_count_placeholder" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

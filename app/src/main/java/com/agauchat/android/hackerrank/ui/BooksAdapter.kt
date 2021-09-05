@@ -23,7 +23,7 @@ class BooksAdapter : RecyclerView.Adapter<BooksHolder>() {
                     LayoutInflater.from(parent.context),
                     parent,
                     false
-                )
+                ), parent.context
             )
             R.layout.book_card -> BooksHolder.BookCardViewHolder(
                 BookCardBinding.inflate(

@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import com.agauchat.android.hackerrank.R
 import com.agauchat.android.hackerrank.data.api.Resource
 import com.agauchat.android.hackerrank.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
@@ -42,6 +43,13 @@ class MainActivity : AppCompatActivity() {
                 if (result.value.isNullOrEmpty()) {
                     changeBestSellersVisibility(binding, View.GONE)
                 } else {
+                    val bestSellersCount = result.value.count()
+                    val detailText = this.resources.getQuantityString(
+                        R.plurals.books_count,
+                        bestSellersCount,
+                        bestSellersCount
+                    )
+                    binding.bestSellersDetail.text = detailText
                     changeBestSellersVisibility(binding, View.VISIBLE)
                     bestSellersRecyclerViewAdapter.items = result.value
                 }
@@ -52,7 +60,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun changeBestSellersVisibility(binding: ActivityMainBinding, visibilityState: Int) {
-        binding.bestSellersTitle.visibility = visibilityState
+        binding.bestSellersTitleSection.visibility = visibilityState
         binding.bestSellersRecyclerView.visibility = visibilityState
     }
 }

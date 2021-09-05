@@ -13,33 +13,50 @@
         android:orientation="vertical"
         app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/bestSellersTitle"
-            style="@style/section_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/margin_large"
-            android:layout_marginTop="@dimen/margin_medium"
-            android:text="@string/best_sellers_title"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/best_sellers_title_section"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/best_sellers_title"
+                style="@style/section_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_large"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:text="@string/best_sellers_title"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/best_sellers_detail"
+                style="@style/section_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_large"
+                app:layout_constraintBottom_toBottomOf="@id/best_sellers_title_section"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:text="@string/books_count_placeholder" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/bestSellersRecyclerView"
+            android:id="@+id/best_sellers_recycler_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/bestSellersTitle"
+            app:layout_constraintTop_toBottomOf="@id/best_sellers_title"
             tools:listitem="@layout/book_card" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/booksRecyclerView"
+            android:id="@+id/books_recycler_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:layout_constraintTop_toBottomOf="@id/bestSellersRecyclerView"
+            app:layout_constraintTop_toBottomOf="@id/best_sellers_recycler_view"
             tools:listitem="@layout/book_card" />
 
     </LinearLayout>

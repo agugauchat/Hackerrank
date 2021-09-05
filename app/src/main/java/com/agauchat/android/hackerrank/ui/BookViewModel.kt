@@ -83,7 +83,7 @@ class BookViewModel @Inject constructor(private val repository: Repository) : Vi
         val auxList = bookList.filter { book -> book.genre == genre.title }
         val items = mutableListOf<BookRecyclerViewItem>()
         if (!auxList.isNullOrEmpty()) {
-            items.add(BookRecyclerViewItem.SectionTitle(genre.title))
+            items.add(BookRecyclerViewItem.SectionTitle(genre.title, auxList.count()))
             auxList.forEach {
                 items.add(BookRecyclerViewItem.BookCard(it.title, it.author, it.img))
             }

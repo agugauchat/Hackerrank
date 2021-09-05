@@ -3,7 +3,8 @@ package com.agauchat.android.hackerrank.ui
 sealed class BookRecyclerViewItem {
 
     class SectionTitle(
-        val title: String
+        val title: String,
+        val count: Int
     ) : BookRecyclerViewItem()
 
     class BookCard(

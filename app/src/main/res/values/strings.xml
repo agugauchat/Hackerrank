@@ -3,5 +3,10 @@
     <string name="best_sellers_title">Best sellers</string>
     <string name="book_image">Book cover</string>
     <string name="title_placeholder">Title</string>
+    <string name="books_count_placeholder">4 books</string>
     <string name="author_placeholder">Author</string>
+    <plurals name="books_count">
+        <item quantity="one">%d book</item>
+        <item quantity="other">%d books</item>
+    </plurals>
 </resources>
